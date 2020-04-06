@@ -35,16 +35,14 @@ public class Target {
         String tryStr = "";
         for (int i = 0; i < target.length(); i++) {
             ciphertext = target.substring(0, i + 1);
-            for (int j = 0; j < ciphertext.length(); j++) {
-                for (int k = 0; k < alphabet.length(); k++) {
-                    char c = alphabet.charAt(k);
-                    String tmp = String.valueOf(c);
+            for (int k = 0; k < alphabet.length(); k++) {
+                char c = alphabet.charAt(k);
+                String tmp = String.valueOf(c);
 //                    System.out.println("tmp " + tmp);
-                    if (judge((tryStr + tmp))) {
-                        tryStr += tmp;
-                        System.out.println("tryStr : " + tryStr);
-                        break;
-                    }
+                if (judge((tryStr + tmp))) {
+                    tryStr += tmp;
+                    System.out.println("tryStr : " + tryStr);
+                    break;
                 }
             }
         }
